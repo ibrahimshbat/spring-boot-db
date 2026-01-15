@@ -1,6 +1,7 @@
 package com.demo.db.demo;
 
 import com.demo.db.demo.model.Task;
+import com.demo.db.demo.repository.TaskIntRepository;
 import com.demo.db.demo.repository.TaskRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,6 +25,12 @@ public class DbApplication {
 		taskRepository.save(task1);
 		List<Task> tasks = taskRepository.findAll();
 		System.out.println("Tasks: " + tasks);
+
+		final var taskInrRepository = context.getBean(TaskIntRepository.class);
+
+		final var task = taskInrRepository.findById("abc1235");
+
+		System.out.println("Auto fetch: " + task);
 
 	}
 
