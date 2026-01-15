@@ -1,0 +1,2 @@
+INSERT INTO task(id, title, description, status) VALUES ('abc1234', 'Java Loop', 'Learn loop in java', 'started');
+INSERT INTO task(id, title, description, status) VALUES ('abc1235', 'Java Introuction', 'Introuction in java', 'finished');
