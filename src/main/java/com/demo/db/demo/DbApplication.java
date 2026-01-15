@@ -1,7 +1,6 @@
 package com.demo.db.demo;
 
 import com.demo.db.demo.model.Task;
-import com.demo.db.demo.repository.TaskIntRepository;
 import com.demo.db.demo.repository.TaskRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
