@@ -1,13 +1,26 @@
 package com.demo.db.demo.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;  // ✅ USE THIS
 
+
+@Entity
+@Table(name = "task")
 public class Task {
 
+    @Id
+    @Column(name = "id")
     private String id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "status")
     private String status;
 
     public Task() {
@@ -22,7 +35,7 @@ public class Task {
         this.id = id;
     }
 
-    public String title() {
+    public String getTitle() {
         return title;
     }
 
