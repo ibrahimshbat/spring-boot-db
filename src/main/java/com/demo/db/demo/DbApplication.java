@@ -14,6 +14,8 @@ public class DbApplication {
 	public static void main(String[] args) {
 		var context = SpringApplication.run(DbApplication.class, args);
 
+
+
 		final var taskjpaRepository = context.getBean(TaskJpaRepository.class);
 
 		var task1 = new Task();
@@ -46,6 +48,8 @@ public class DbApplication {
 		System.out.println("Find by title containing keyword");
 		final var tasksByTitleKeyword = taskjpaRepository.findByTitleContaining("Loop");
 		tasksByTitleKeyword.forEach(System.out::println);
+
+
 
 	}
 
