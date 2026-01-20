@@ -1,13 +1,28 @@
 package com.demo.db.demo.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.stereotype.Component;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
+
+@Entity
+@Table(name = "task")
 public class Task {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "id")
     private String id;
+
+    @Column(name = "title")
+    @NotNull(message = "Title required")
     private String title;
+
+    @Column(name = "description")
+    @NotNull(message = "Description required")
     private String description;
+
+    @Column(name = "status")
+    @NotNull(message = "Status required")
     private String status;
 
     public Task() {
@@ -22,7 +37,7 @@ public class Task {
         this.id = id;
     }
 
-    public String title() {
+    public String getTitle() {
         return title;
     }
 

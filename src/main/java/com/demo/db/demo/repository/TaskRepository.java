@@ -21,7 +21,7 @@ public class TaskRepository{
     public void save(Task task) {
         System.out.println("Saved");
         final var sql = "INSERT INTO task (id, title, description, status) VALUES (?, ?, ?, ?)";
-        final var effectRows = jdbcTemplate.update(sql, task.getId(), task.title(), task.getDescription(), task.getStatus());
+        final var effectRows = jdbcTemplate.update(sql, task.getId(), task.getTitle(), task.getDescription(), task.getStatus());
 
         System.out.println("Effect rows: " + effectRows);
     }
