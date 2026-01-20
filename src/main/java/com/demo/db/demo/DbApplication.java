@@ -19,14 +19,14 @@ public class DbApplication {
 		final var taskjpaRepository = context.getBean(TaskJpaRepository.class);
 
 		var task1 = new Task();
-		task1.setId("1");
+		//task1.setId("1");
 		task1.setTitle("Task 1");
 		task1.setDescription("Task 1 description");
 		task1.setStatus("OPEN");
 		taskjpaRepository.save(task1);
 
 		var task2 = new Task();
-		task2.setId("2");
+		//task2.setId("2");
 		task2.setTitle("Task 2");
 		task2.setDescription("Task 2 description");
 		task2.setStatus("FINISHED");

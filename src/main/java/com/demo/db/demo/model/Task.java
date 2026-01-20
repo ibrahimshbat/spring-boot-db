@@ -1,6 +1,7 @@
 package com.demo.db.demo.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 
 @Entity
@@ -8,17 +9,20 @@ import jakarta.persistence.*;
 public class Task {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id")
     private String id;
 
     @Column(name = "title")
+    @NotNull(message = "Title required")
     private String title;
 
     @Column(name = "description")
+    @NotNull(message = "Description required")
     private String description;
 
     @Column(name = "status")
+    @NotNull(message = "Status required")
     private String status;
 
     public Task() {
